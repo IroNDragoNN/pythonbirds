@@ -1,3 +1,6 @@
+# Aprendemos a criar atributos dinamicos, que são gerados após as criações de dunder inits.
+# Apagar atributos dinâmicos com o comando del
+
 class Pessoa:
     def __init__(self, *filhos, nome = None, idade=35):
         self.idade = idade
@@ -17,3 +20,7 @@ if __name__ == '__main__':
     print(luciano.idade)
     for filho in luciano.filhos:
         print(filho.nome)
+    luciano.sobrenome = 'Ramalho'
+    del luciano.filhos
+    print(luciano.__dict__)
+    print(renzo.__dict__)
